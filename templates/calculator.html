@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <center><h1>Calculator</h1></center>
+    <div class="row mt-5">
+             
+        <div class="col-1"></div>
+        <div class="col-6  shadow">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="num1">Number 1</label>
+                  <input type="number" class="form-control" name="num1">
+                </div>
+                <div class="form-group">
+                  <label for="num2">Number 2</label>
+                  <input type="number" class="form-control" name="num2" >
+                </div>
+                
+                <br><button type="submit" name="add" class="btn btn-primary col-4">Addition</button>
+                <button type="submit" name="sub" class="btn btn-primary col-4">Subtract</button><br>
+                <br><button type="submit" name="mul" class="btn btn-primary col-4">Mutiply</button>
+                <button type="submit" name="div" class="btn btn-primary col-4">Divide</button><br>
+              <br></form>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2 shadow">
+            <h3>Result - {{result}}</h3>   
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
